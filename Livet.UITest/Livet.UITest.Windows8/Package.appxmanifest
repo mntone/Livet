@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="cbd5db72-7ecd-417e-8d34-52c6dedfc4e0" Publisher="CN=owner" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>Livet.UITest</DisplayName>
+    <PublisherDisplayName>owner</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Livet.UITest.App">
+      <VisualElements DisplayName="Livet.UITest (Windows 8)" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Livet.UITest (Windows 8)" ForegroundText="light" BackgroundColor="#464646">
+        <DefaultTile ShowName="logoOnly" />
+        <SplashScreen Image="Assets\SplashScreen.png" />
+        <InitialRotationPreference>
+          <Rotation Preference="portrait" />
+          <Rotation Preference="landscape" />
+          <Rotation Preference="portraitFlipped" />
+          <Rotation Preference="landscapeFlipped" />
+        </InitialRotationPreference>
+      </VisualElements>
+    </Application>
+  </Applications>
+</Package>

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{75A6EAEE-E95B-457B-A3D0-E8356BC167D1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Livet.Extensions</RootNamespace>
+    <AssemblyName>Livet.Extensions</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NET45</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Livet.Extensions.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Livet.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ReferenceAssemblies\.NET4.5\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack">
+      <HintPath>..\..\ReferenceAssemblies\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell">
+      <HintPath>..\..\ReferenceAssemblies\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ReferenceAssemblies\.NET4.5\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Livet.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Livet\Livet%28.NET4.5%29\Livet%28.NET4.5%29.csproj">
+      <Project>{93990e82-b8e1-41e8-b6f5-9a6c87674221}</Project>
+      <Name>Livet%28.NET4.5%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Livet.Extensions%28.NET4.0%29\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\Livet.Extensions%28.NET4.0%29\Properties\Resources.ja.resx">
+      <Link>Properties\Resources.ja.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Livet.Extensions%28.NET4.0%29\Properties\Resources.resx">
+      <Link>Properties\Resources.resx</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="..\..\Livet.Extensions\Livet.Extensions.Shared\Livet.Extensions.Shared.projitems" Label="Shared" Condition="Exists('..\..\Livet.Extensions\Livet.Extensions.Shared\Livet.Extensions.Shared.projitems')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

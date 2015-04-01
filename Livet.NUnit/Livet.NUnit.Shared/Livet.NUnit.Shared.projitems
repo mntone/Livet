@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>b5a84439-b0b7-4595-bd72-fae6a46e14aa</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Livet.NUnit.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)EventListeners\CollectionChangedEventListenerTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventListeners\CollectionChangedWeakEventListenerTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventListeners\EventListenerTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventListeners\LivetWeakEventListenerTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventListeners\PropertyChangedEventListenerTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventListeners\PropertyChangedWeakEventListenerTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestInfrastructures\ChainingAssertion.NUnit.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestInfrastructures\TestEventPublisher.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TestInfrastructures\TestViewModel.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{78A45C6F-5FAC-45C1-B848-C82FCA89D0DC}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Livet.UITest</RootNamespace>
+    <AssemblyName>Livet.UITest</AssemblyName>
+    <DefaultLanguage>ja-JP</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>Livet.UITest_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NETFX_CORE,WINRT,WIN8</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE,WINRT,WIN8</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\LayoutAwarePage.cs" />
+    <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="Livet.UITest_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\SmallLogo.png" />
+    <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Assets\StoreLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Common\StandardStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Windows.UI.Interactivity">
+      <HintPath>..\..\packages\Windows.UI.Interactivity.1.3.0.0\lib\win8\Windows.UI.Interactivity.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Livet.Extensions.Windows8\Livet.Extensions.Windows8.csproj">
+      <Project>{efeb08b6-adbd-435c-aed5-ee0f2abd316c}</Project>
+      <Name>Livet.Extensions.Windows8</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Livet\Livet.Windows8\Livet.Windows8.csproj">
+      <Project>{5dada3ac-cae6-484c-9615-a1e3621d91d9}</Project>
+      <Name>Livet.Windows8</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
+    <VisualStudioVersion>11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="..\Livet.UITest.Mobile\Livet.UITest.Mobile.projitems" Label="Shared" Condition="Exists('..\Livet.UITest.Mobile\Livet.UITest.Mobile.projitems')" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

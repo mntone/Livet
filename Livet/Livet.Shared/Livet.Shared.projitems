@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>e4a445b3-492c-4e0e-8a3b-3b7792794a2a</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Livet</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AnonymousDisposable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\Command.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\ListenerCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Commands\ViewModelCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DispatcherCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventArgsFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventListeners\AnonymousCollectionChangedEventHandlerBag.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventListeners\AnonymousPropertyChangedEventHandlerBag.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventListeners\CollectionChangedEventListener.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventListeners\EventListener.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventListeners\PropertyChangedEventListener.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventListeners\WeakEvents\CollectionChangedWeakEventListener.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventListeners\WeakEvents\LivetWeakEventListener.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventListeners\WeakEvents\PropertyChangedWeakEventListener.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LivetCompositeDisposable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messaging\InteractionMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NotificationObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ObservableSynchronizedCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ReadOnlyDispatcherCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModelHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WeakReference.generic.cs" />
+  </ItemGroup>
+</Project>

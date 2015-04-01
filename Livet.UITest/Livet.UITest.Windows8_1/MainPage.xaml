@@ -1,0 +1,99 @@
+﻿<Page
+	x:Class="Livet.UITest.MainPage"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="using:Livet.UITest"
+	xmlns:i="using:Microsoft.Xaml.Interactivity"
+	xmlns:e="using:Microsoft.Xaml.Interactions.Core"
+	xmlns:l="using:Livet.Behaviors"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	Unloaded="Page_Unloaded">
+
+	<Grid
+		Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="140" />
+			<RowDefinition
+				Height="*" />
+		</Grid.RowDefinitions>
+
+		<StackPanel
+			Grid.Row="1"
+			HorizontalAlignment="Center"
+			VerticalAlignment="Center"
+			Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+
+			<Button
+				Content="LiveCallMethodAction (MethodParameterなし) のテスト">
+				<i:Interaction.Behaviors>
+					<e:EventTriggerBehavior
+						EventName="Click">
+						<l:LivetCallMethodAction
+							MethodTarget="{Binding}"
+							MethodName="PopupAsync" />
+					</e:EventTriggerBehavior>
+				</i:Interaction.Behaviors>
+			</Button>
+
+			<Button
+				Content="LiveCallMethodAction (MethodParameterあり) のテスト">
+				<i:Interaction.Behaviors>
+					<e:EventTriggerBehavior
+						EventName="Click">
+						<l:LivetCallMethodAction
+							MethodTarget="{Binding}"
+							MethodName="PopupAsync"
+							MethodParameter="これはMethodParameterありのLiveCallMethodActionからの呼び出しです" />
+					</e:EventTriggerBehavior>
+				</i:Interaction.Behaviors>
+			</Button>
+
+			<TextBlock
+				Text="{Binding Text}" />
+
+			<TextBox
+				Text="{Binding Text, Mode=TwoWay}" />
+
+			<CheckBox
+				IsChecked="{Binding IsCommandEnabled, Mode=TwoWay}"
+				Content="ViewModelCommandが有効" />
+
+			<Button
+				Content="ViewModelCommandのテスト"
+				Command="{Binding ViewModelCommand}" />
+
+		</StackPanel>
+
+		<!-- [戻る] ボタンおよびページ タイトル-->
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition
+					Width="Auto" />
+				<ColumnDefinition
+					Width="*" />
+			</Grid.ColumnDefinitions>
+			<Button
+				x:Name="backButton"
+				Margin="39,59,40,0"
+				Width="41"
+				Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
+				Style="{StaticResource NavigationBackButtonNormalStyle}"
+				VerticalAlignment="Top"
+				AutomationProperties.Name="Back"
+				AutomationProperties.AutomationId="BackButton"
+				AutomationProperties.ItemType="Navigation Button" />
+			<TextBlock
+				x:Name="pageTitle"
+				Text="Livet.UITest (Windows 8.1)"
+				Style="{StaticResource HeaderTextBlockStyle}"
+				Grid.Column="1"
+				IsHitTestVisible="false"
+				TextWrapping="NoWrap"
+				VerticalAlignment="Bottom"
+				Margin="0,0,30,40" />
+		</Grid>
+	</Grid>
+</Page>
